@@ -2,32 +2,54 @@ package com.thedeveloperworldisyours.whatdoyoudoandroid.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import library.annotations.Column;
+
 /**
  * Created by javiergonzalezcabezas on 18/4/15.
  */
 public class Node {
 
+    public transient static final String COLUMN_MISSION = "recordText";
+    public transient static final String COLUMN_NODE_2 ="";
+    public transient static final String COLUMN_NODE_1 = "recordText";
+    public transient static final String COLUMN_STATUS = "recordText";
+    public transient static final String COLUMN_ANSWER_2 = "recordText";
+    public transient static final String COLUMN_ANSWER_1 = "recordText";
+    public transient static final String COLUMN_TEXT = "_id";
+    public transient static final String COLUMN_NAME = "recordText";
+    public transient static final String COLUMN_ID = "_id";
+
     @Expose
+    @Column(name = COLUMN_ID)
     private Integer id;
     @Expose
+    @Column(name = COLUMN_NAME)
     private String name;
     @Expose
+    @Column(name = COLUMN_TEXT)
     private String text;
     @SerializedName("answer_1")
     @Expose
+    @Column(name = COLUMN_ANSWER_1)
     private String answer1;
     @SerializedName("answer_2")
     @Expose
+    @Column(name = COLUMN_ANSWER_2)
     private String answer2;
     @Expose
+    @Column(name = COLUMN_STATUS)
     private Integer status;
     @SerializedName("node_1")
     @Expose
+    @Column(name = COLUMN_NODE_1)
     private Object node1;
     @SerializedName("node_2")
     @Expose
+    @Column(name = COLUMN_NODE_2)
     private Object node2;
     @Expose
+    @Column(name = COLUMN_MISSION)
     private Integer mission;
 
     /**

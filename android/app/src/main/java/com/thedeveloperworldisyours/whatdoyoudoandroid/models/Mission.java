@@ -2,18 +2,31 @@ package com.thedeveloperworldisyours.whatdoyoudoandroid.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import library.annotations.Column;
+
 /**
  * Created by javiergonzalezcabezas on 18/4/15.
  */
+@SuppressWarnings("UnusedDeclaration")
 public class Mission {
 
+    public transient static final String COLUMN_BEGINNING = "recordText";
+    public transient static final String COLUMN_TEXT = "_id";
+    public transient static final String COLUMN_NAME = "recordText";
+    public transient static final String COLUMN_ID = "_id";
+
     @Expose
+    @Column(name = COLUMN_ID)
     private Integer id;
     @Expose
+    @Column(name = COLUMN_NAME)
     private String name;
     @Expose
+    @Column(name = COLUMN_TEXT)
     private String text;
     @Expose
+    @Column(name = COLUMN_BEGINNING)
     private Integer beginning;
 
     /**
