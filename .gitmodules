@@ -1,0 +1,21 @@
+[submodule "appengine/submodules/djangoappengine"]
+	path = appengine/submodules/djangoappengine
+	url = https://github.com/django-nonrel/djangoappengine.git
+[submodule "appengine/submodules/djangotoolbox"]
+	path = appengine/submodules/djangotoolbox
+	url = https://github.com/django-nonrel/djangotoolbox.git
+[submodule "appengine/submodules/django-autoload"]
+	path = appengine/submodules/django-autoload
+	url = https://github.com/hflicka/django-autoload.git
+[submodule "appengine/submodules/django"]
+	path = appengine/submodules/django
+	url = https://github.com/django-nonrel/django.git
+[submodule "appengine/submodules/django-dbindexer"]
+	path = appengine/submodules/django-dbindexer
+	url = https://github.com/django-nonrel/django-dbindexer.git
+[submodule "appengine/submodules/django-rest-framework"]
+	path = appengine/submodules/django-rest-framework
+	url = https://github.com/tomchristie/django-rest-framework.git
+[submodule "appengine/submodules/django-permission-backend-nonrel"]
+	path = appengine/submodules/django-permission-backend-nonrel
+	url = https://github.com/django-nonrel/django-permission-backend-nonrel.git
