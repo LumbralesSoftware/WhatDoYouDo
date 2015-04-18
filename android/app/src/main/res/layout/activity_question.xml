@@ -32,9 +32,7 @@
             android:text="@string/activity_question_condition" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            style="@style/NormalLayoutStyle"
             android:orientation="horizontal">
 
             <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
@@ -52,9 +50,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+            style="@style/NormalLayoutStyle"
             android:orientation="horizontal">
 
             <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton

@@ -31,5 +31,11 @@
         <item name="android:textColor">@color/blue</item>
         <item name="android:textSize">20sp</item>
     </style>
+    <style name="NormalLayoutStyle">
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
 
 </resources>
