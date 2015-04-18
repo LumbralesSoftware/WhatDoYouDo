@@ -3,6 +3,8 @@ version: 1
 runtime: python27
 api_version: 1
 threadsafe: true
+builtins:
+- remote_api: on
 
 handlers:
 
@@ -15,6 +17,10 @@ handlers:
   static_dir: sitepackages/django/contrib/admin/static/admin/
   secure: always
 
+- url: /static/rest_framework
+  static_dir: sitepackages/rest_framework/static/rest_framework
+  expiration: '0'
+
 # Set Django admin to be login:admin as well as Django's is_staff restriction
 - url: /admin.*
   script: project.wsgi.application
@@ -24,6 +30,7 @@ handlers:
 - url: /.*
   script: project.wsgi.application
   secure: always
+
 
 skip_files:
     - manage.py

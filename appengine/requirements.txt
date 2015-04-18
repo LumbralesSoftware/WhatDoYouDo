@@ -6,3 +6,5 @@ git+https://github.com/adamalton/django-csp-reports.git#egg=cspreports
 django-session-csrf
 nose
 six
+git+https://github.com/tomchristie/django-rest-framework.git#egg=rest_framework
+

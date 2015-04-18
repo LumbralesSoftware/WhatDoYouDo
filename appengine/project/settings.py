@@ -39,10 +39,12 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'djangosecure',
-    'csp',
-    'cspreports',
+    #'csp',
+    #'cspreports',
     'djangae.contrib.gauth',
     'djangae.contrib.security',
+    'rest_framework',
+    'whatdoyoudo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,7 +53,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'djangae.contrib.gauth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'csp.middleware.CSPMiddleware',
+    #'csp.middleware.CSPMiddleware',
     'session_csrf.CsrfMiddleware',
     'djangosecure.middleware.SecurityMiddleware',
 )
@@ -75,14 +77,14 @@ SECURE_CHECKS = [
     "djangosecure.check.djangosecure.check_frame_deny",
     "djangosecure.check.djangosecure.check_ssl_redirect",
     "project.checks.check_session_csrf_enabled",
-    "project.checks.check_csp_is_not_report_only"
+    #"project.checks.check_csp_is_not_report_only"
 ]
 
-CSP_REPORT_URI = reverse_lazy('report_csp')
-CSP_REPORTS_LOG = True
-CSP_REPORTS_LOG_LEVEL = 'warning'
-CSP_REPORTS_SAVE = True
-CSP_REPORTS_EMAIL_ADMINS = False
+#CSP_REPORT_URI = reverse_lazy('report_csp')
+#CSP_REPORTS_LOG = True
+#CSP_REPORTS_LOG_LEVEL = 'warning'
+#CSP_REPORTS_SAVE = True
+#CSP_REPORTS_EMAIL_ADMINS = False
 
 ROOT_URLCONF = 'project.urls'
 
@@ -123,3 +125,9 @@ CSP_CONNECT_SRC = ("'self'", "plus.google.com", "www.google-analytics.com")
 
 
 from djangae.contrib.gauth.settings import *
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    )
+}

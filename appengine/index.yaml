@@ -37,3 +37,39 @@ indexes:
   properties:
   - name: app
   - name: name
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: created
+    direction: desc
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: created
+    direction: desc
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: mission_id
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: status
+  - name: __key__
+    direction: desc
