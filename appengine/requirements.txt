@@ -1,0 +1,8 @@
+git+https://github.com/potatolondon/djangae.git#egg=djangae
+django>=1.7,<1.8
+django-secure
+django-csp
+git+https://github.com/adamalton/django-csp-reports.git#egg=cspreports
+django-session-csrf
+nose
+six

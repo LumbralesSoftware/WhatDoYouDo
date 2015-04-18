@@ -1,20 +1,19 @@
-import dbindexer
-from django.conf.urls import url, include
-from django.contrib import admin
-from django.http import HttpResponse
+from django.conf.urls import patterns, include, url
 
-# django admin
+import session_csrf
+session_csrf.monkeypatch()
+
+from django.contrib import admin
 admin.autodiscover()
 
-# search for dbindexes.py in all INSTALLED_APPS and load them
-dbindexer.autodiscover()
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'project.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+    url(r'^_ah/', include('djangae.urls')),
 
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browseable API.
-urlpatterns = [
-    url(r'^$', lambda r: HttpResponse("", mimetype="text/plain")),
-    url(r'^_ah/warmup$', 'djangoappengine.views.warmup'),
-    url(r'^robots\.txt$', lambda r: HttpResponse("User-agent: *\nDisallow: /", mimetype="text/plain")),
+    # Note that by default this is also locked down with login:admin in app.yaml
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-]
+
+    url(r'^csp/', include('cspreports.urls')),
+)

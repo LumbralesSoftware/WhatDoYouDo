@@ -1,41 +1,35 @@
-#application: project
+application: what-do-you-do
 version: 1
 runtime: python27
 api_version: 1
-threadsafe: yes
-
-builtins:
-- remote_api: on
-
-libraries:
-- name: PIL
-  version: latest
-inbound_services:
-- warmup
+threadsafe: true
 
 handlers:
-- url: /_ah/queue/deferred
-  script: djangoappengine.deferred.handler.application
+
+- url: /_ah/(mapreduce|queue|warmup).*
+  script: project.wsgi.application
+  login: admin
+  secure: always
+
+- url: /static/admin/
+  static_dir: sitepackages/django/contrib/admin/static/admin/
+  secure: always
+
+# Set Django admin to be login:admin as well as Django's is_staff restriction
+- url: /admin.*
+  script: project.wsgi.application
+  secure: always
   login: admin
 
-- url: /_ah/stats/.*
-  script: djangoappengine.appstats.application
-
-- url: /media/admin
-  static_dir: django/contrib/admin/media
-  expiration: '0'
-
-- url: /static/admin
-  static_dir: django/contrib/admin/static/admin
-  expiration: '0'
-
-- url: /static/rest_framework
-  static_dir: rest_framework/static/rest_framework
-  expiration: '0'
-
 - url: /.*
-  script: djangoappengine.main.application
+  script: project.wsgi.application
+  secure: always
 
 skip_files:
-  submodules
-
+    - manage.py
+    - README.md
+    - install_deps
+    - requirements.txt
+    - sitepackages/google_appengine*
+    - \.storage.*
+    - (.*)\.pyc
