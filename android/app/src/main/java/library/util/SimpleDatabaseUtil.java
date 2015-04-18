@@ -2,8 +2,8 @@ package library.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import garin.artemiy.sqlitesimple.library.annotations.Column;
-import garin.artemiy.sqlitesimple.library.annotations.Table;
+import library.annotations.Column;
+import library.annotations.Table;
 
 import java.lang.reflect.Field;
 import java.util.Date;
@@ -41,7 +41,7 @@ public class SimpleDatabaseUtil {
 
     /**
      * @param field - Java field
-     * @return - return column name {@link garin.artemiy.sqlitesimple.library.annotations.Column}, or field name if null
+     * @return - return column name {@link library.annotations.Column}, or field name if null
      */
     public static String getColumnName(Field field) {
         Column annotationColumn = field.getAnnotation(Column.class);
@@ -55,7 +55,7 @@ public class SimpleDatabaseUtil {
 
     /**
      * @param tClass - Java class
-     * @return - return table name {@link garin.artemiy.sqlitesimple.library.annotations.Table}, or class name if null
+     * @return - return table name {@link library.annotations.Table}, or class name if null
      */
     public static String getTableName(Class<?> tClass) {
         Table annotationTable = tClass.getAnnotation(Table.class);
@@ -68,7 +68,7 @@ public class SimpleDatabaseUtil {
 
     /**
      * @param field            - Java field
-     * @param columnAnnotation - {@link garin.artemiy.sqlitesimple.library.annotations.Column}
+     * @param columnAnnotation - {@link library.annotations.Column}
      * @return - return correct SQL type by parsing Java field
      */
     public static String getSQLType(Field field, Column columnAnnotation) {

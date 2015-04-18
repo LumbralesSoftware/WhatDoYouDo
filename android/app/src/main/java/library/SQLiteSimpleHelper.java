@@ -3,9 +3,9 @@ package library;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import garin.artemiy.sqlitesimple.library.util.SimpleConstants;
-import garin.artemiy.sqlitesimple.library.util.SimpleDatabaseUtil;
-import garin.artemiy.sqlitesimple.library.util.SimplePreferencesHelper;
+import library.util.SimpleConstants;
+import library.util.SimpleDatabaseUtil;
+import library.util.SimplePreferencesHelper;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,10 +41,10 @@ public class SQLiteSimpleHelper extends SQLiteOpenHelper {
 
     /**
      * @param context                - see {@link android.content.Context}
-     * @param sharedPreferencesPlace - see {@link garin.artemiy.sqlitesimple.library.util.SimpleConstants}
+     * @param sharedPreferencesPlace - see {@link library.util.SimpleConstants}
      * @param databaseVersion        - see {@link android.database.sqlite.SQLiteOpenHelper}
      * @param assetsDatabaseName     - Load assets or internal (if null) sqlite database if need
-     * @param isFTS                  - see {@link garin.artemiy.sqlitesimple.library.SQLiteSimpleFTS}
+     * @param isFTS                  - see {@link library.SQLiteSimpleFTS}
      */
     public SQLiteSimpleHelper(Context context, String sharedPreferencesPlace,
                               int databaseVersion, String assetsDatabaseName, boolean isFTS) {

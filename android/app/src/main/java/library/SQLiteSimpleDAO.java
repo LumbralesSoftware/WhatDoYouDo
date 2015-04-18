@@ -4,10 +4,10 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import garin.artemiy.sqlitesimple.library.annotations.Column;
-import garin.artemiy.sqlitesimple.library.util.SimpleConstants;
-import garin.artemiy.sqlitesimple.library.util.SimpleDatabaseUtil;
-import garin.artemiy.sqlitesimple.library.util.SimplePreferencesHelper;
+import library.annotations.Column;
+import library.util.SimpleConstants;
+import library.util.SimpleDatabaseUtil;
+import library.util.SimplePreferencesHelper;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;

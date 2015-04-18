@@ -5,10 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
-import garin.artemiy.sqlitesimple.library.model.FTSModel;
-import garin.artemiy.sqlitesimple.library.util.SimpleConstants;
-import garin.artemiy.sqlitesimple.library.util.SimpleDatabaseUtil;
-import garin.artemiy.sqlitesimple.library.util.SimplePreferencesHelper;
+import library.model.FTSModel;
+import library.util.SimpleConstants;
+import library.util.SimpleDatabaseUtil;
+import library.util.SimplePreferencesHelper;
 
 import java.util.ArrayList;
 import java.util.List;
