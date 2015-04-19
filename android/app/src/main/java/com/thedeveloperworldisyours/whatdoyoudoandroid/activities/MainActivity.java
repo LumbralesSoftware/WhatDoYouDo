@@ -3,16 +3,20 @@ package com.thedeveloperworldisyours.whatdoyoudoandroid.activities;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.MissionDAO;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Mission;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
     private Button mMission;
+    private MissionDAO mMissionDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,17 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         mMission = (Button) findViewById(R.id.main_activity_mission_button);
         mMission.setOnClickListener(this);
+
+        mMissionDAO = new MissionDAO(this);
+        Mission mission = new Mission();
+        mission.setId(23423);
+        mission.setName("asdf");
+        mission.setText("lalalala");
+        mission.setBeginning(123);
+        mMissionDAO.create(mission);
+        Mission r = mMissionDAO.readWhere("_id", "23423");
+        Log.v("MainActivity",r.getName());
+
     }
 
 

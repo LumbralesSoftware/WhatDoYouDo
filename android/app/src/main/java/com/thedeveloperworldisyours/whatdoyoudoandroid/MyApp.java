@@ -19,11 +19,9 @@ public class MyApp extends Application {
         super.onCreate();
         initializeTypefaces();
         if (SimpleDatabaseUtil.isFirstApplicationStart(this)) {
-            SQLiteSimple databaseSimple = new SQLiteSimple(this);
+            SQLiteSimple databaseSimple = new SQLiteSimple(this, Constants.DATABASE_NAME);
             databaseSimple.create(Node.class);
-
-            SQLiteSimple internalSimple = new SQLiteSimple(this, Constants.DATABASE_NAME);
-            internalSimple.create(Mission.class);
+            databaseSimple.create(Mission.class);
         }
     }
 

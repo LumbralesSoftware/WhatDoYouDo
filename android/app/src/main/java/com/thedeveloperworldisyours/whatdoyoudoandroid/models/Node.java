@@ -10,19 +10,19 @@ import library.annotations.Column;
  */
 public class Node {
 
-    public transient static final String COLUMN_MISSION = "recordText";
-    public transient static final String COLUMN_NODE_2 ="";
-    public transient static final String COLUMN_NODE_1 = "recordText";
-    public transient static final String COLUMN_STATUS = "recordText";
-    public transient static final String COLUMN_ANSWER_2 = "recordText";
-    public transient static final String COLUMN_ANSWER_1 = "recordText";
-    public transient static final String COLUMN_TEXT = "_id";
-    public transient static final String COLUMN_NAME = "recordText";
+    public transient static final String COLUMN_MISSION = "mission";
+    public transient static final String COLUMN_NODE_2 ="node_2";
+    public transient static final String COLUMN_NODE_1 = "node_1";
+    public transient static final String COLUMN_STATUS = "status";
+    public transient static final String COLUMN_ANSWER_2 = "answer_2";
+    public transient static final String COLUMN_ANSWER_1 = "answer_1";
+    public transient static final String COLUMN_TEXT = "text";
+    public transient static final String COLUMN_NAME = "name";
     public transient static final String COLUMN_ID = "_id";
 
     @Expose
-    @Column(name = COLUMN_ID)
-    private Integer id;
+    @Column(name = COLUMN_ID, isPrimaryKey = true)
+    private double id;
     @Expose
     @Column(name = COLUMN_NAME)
     private String name;
@@ -43,21 +43,21 @@ public class Node {
     @SerializedName("node_1")
     @Expose
     @Column(name = COLUMN_NODE_1)
-    private Object node1;
+    private float node1;
     @SerializedName("node_2")
     @Expose
     @Column(name = COLUMN_NODE_2)
-    private Object node2;
+    private float node2;
     @Expose
     @Column(name = COLUMN_MISSION)
-    private Integer mission;
+    private float mission;
 
     /**
      *
      * @return
      * The id
      */
-    public Integer getId() {
+    public double getId() {
         return id;
     }
 
@@ -165,7 +165,7 @@ public class Node {
      * @return
      * The node1
      */
-    public Object getNode1() {
+    public float getNode1() {
         return node1;
     }
 
@@ -174,7 +174,7 @@ public class Node {
      * @param node1
      * The node_1
      */
-    public void setNode1(Object node1) {
+    public void setNode1(float node1) {
         this.node1 = node1;
     }
 
@@ -183,7 +183,7 @@ public class Node {
      * @return
      * The node2
      */
-    public Object getNode2() {
+    public float getNode2() {
         return node2;
     }
 
@@ -192,7 +192,7 @@ public class Node {
      * @param node2
      * The node_2
      */
-    public void setNode2(Object node2) {
+    public void setNode2(float node2) {
         this.node2 = node2;
     }
 
@@ -201,7 +201,7 @@ public class Node {
      * @return
      * The mission
      */
-    public Integer getMission() {
+    public float getMission() {
         return mission;
     }
 

@@ -5,6 +5,7 @@ package com.thedeveloperworldisyours.whatdoyoudoandroid.utils;
  */
 public class Constants {
 
+    public static final String URL = "https://what-do-you-do.appspot.com/api";
     public static final String DATABASE_NAME = "db/whatdoyoudo.sqlite";
-    public final static int INTRO_TIME = 1000;
+    public static final int INTRO_TIME = 1000;
 }

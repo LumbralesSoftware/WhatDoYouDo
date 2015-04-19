@@ -11,14 +11,14 @@ import library.annotations.Column;
 @SuppressWarnings("UnusedDeclaration")
 public class Mission {
 
-    public transient static final String COLUMN_BEGINNING = "recordText";
-    public transient static final String COLUMN_TEXT = "_id";
-    public transient static final String COLUMN_NAME = "recordText";
+    public transient static final String COLUMN_BEGINNING = "beginning";
+    public transient static final String COLUMN_TEXT = "text";
+    public transient static final String COLUMN_NAME = "name";
     public transient static final String COLUMN_ID = "_id";
 
     @Expose
-    @Column(name = COLUMN_ID)
-    private Integer id;
+    @Column(name = COLUMN_ID, isPrimaryKey = true)
+    private double id;
     @Expose
     @Column(name = COLUMN_NAME)
     private String name;
@@ -27,14 +27,14 @@ public class Mission {
     private String text;
     @Expose
     @Column(name = COLUMN_BEGINNING)
-    private Integer beginning;
+    private double beginning;
 
     /**
      *
      * @return
      * The id
      */
-    public Integer getId() {
+    public double getId() {
         return id;
     }
 
@@ -88,7 +88,7 @@ public class Mission {
      * @return
      * The beginning
      */
-    public Integer getBeginning() {
+    public double getBeginning() {
         return beginning;
     }
 
