@@ -10,8 +10,18 @@ from whatdoyoudo.models import Mission, MissionNode
 from whatdoyoudo.serializers import MissionNodeSerializer, MissionSerializer
 
 class MissionViewSet(viewsets.ModelViewSet):
-    queryset = Mission.objects.all()
     serializer_class = MissionSerializer
+
+    def get_queryset(self):
+        """
+        Optionally restricts the returned mission to a given language
+        by filtering against a `language` query parameter in the URL.
+        """
+        queryset = Mission.objects.all()
+        language = self.request.QUERY_PARAMS.get('language', None)
+        if language is not None:
+            queryset = queryset.filter(language=language)
+        return queryset
 
     def update(self, request, *args, **kwargs):
         logging.info(request.DATA)

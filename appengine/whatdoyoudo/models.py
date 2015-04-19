@@ -3,6 +3,8 @@ from django.db import models
 from django.core.validators import MaxLengthValidator
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
+from django.conf import settings
+
 
 class Mission(models.Model):
     id = models.AutoField(primary_key=True)
@@ -10,6 +12,7 @@ class Mission(models.Model):
     text = models.TextField(max_length=1000, verbose_name="Mission Description")
     beginning = models.ForeignKey('MissionNode', verbose_name="First node", related_name="beginning", null=True, blank=True)
     created = models.DateTimeField(verbose_name="Created date", null=True, blank=True, auto_now_add=True)
+    language = models.CharField(max_length=7, choices=settings.LANGUAGES, null=True, blank=True)
 
     def __str__(self):
         return unicode(self).encode('utf-8')
