@@ -3,7 +3,7 @@
     package="com.thedeveloperworldisyours.whatdoyoudoandroid" >
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".MyApp"
@@ -27,6 +27,10 @@
         <activity
             android:name=".activities.QuestionActivity"
             android:label="@string/activity_question_title" >
+        </activity>
+        <activity
+            android:name=".activities.FinishActivity"
+            android:label="@string/title_activity_finish_acitivity" >
         </activity>
     </application>
 

@@ -33,7 +33,6 @@ public class MySimpleArrayAdapter extends ArrayAdapter<Mission> {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.row_mission, parent, false);
         TextView textView = (TextView) rowView.findViewById(R.id.row_mission_firstLine);
-        ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
         textView.setText(mValues.get(position).getName());
         rowView.setTag(mValues.get(position).getId());
         return rowView;

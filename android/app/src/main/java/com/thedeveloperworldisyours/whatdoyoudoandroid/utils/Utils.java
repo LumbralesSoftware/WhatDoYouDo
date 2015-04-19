@@ -15,4 +15,17 @@ public class Utils {
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
         return netInfo != null && netInfo.isConnectedOrConnecting();
     }
+    /**
+     *
+     * @param destination
+     * @param contactName
+     */
+    public static void shared(Activity destination, String contactName)
+    {
+        // If sharing to a contact, put a leading space at the beginning
+        if (!contactName.isEmpty()) {
+            contactName = " " + contactName;
+        }
+        Shared.onShareEmail(destination, contactName);
+    }
 }

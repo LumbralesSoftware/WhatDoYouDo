@@ -8,8 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -40,7 +38,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.main_activity);
 
         /*mMission = (Button) findViewById(R.id.main_activity_mission_button);
         mMission.setOnClickListener(this);
@@ -58,6 +56,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     public void getInfo(){
         if (Utils.isOnline(this)) {
+            clearDB();
             getMissions();
         }else if(exitsDB()){
             getInfoMissionFromDB();
@@ -65,6 +64,11 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         }else{
             Toast.makeText(this,R.string.no_connection,Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void clearDB(){
+        mMissionDAO.deleteAll();
+        mNodeDAO.deleteAll();
     }
 
     public void getInfoMissionFromDB(){

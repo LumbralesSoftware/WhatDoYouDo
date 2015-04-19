@@ -14,4 +14,5 @@ public class Constants {
     public static final int STATUS_CONTINUE = 3;
     public static final String ID_INTENT_MISSION = "MainActivity";
     public static final String ID_INTENT_NODE = "IntroActivity";
+    public static final String ID_INTENT_FINISH = "QuestionActivity";
 }
