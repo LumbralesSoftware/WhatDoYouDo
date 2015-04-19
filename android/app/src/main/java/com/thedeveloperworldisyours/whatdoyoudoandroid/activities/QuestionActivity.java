@@ -16,6 +16,7 @@ import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 
 public class QuestionActivity extends ActionBarActivity implements View.OnClickListener {
 
+    private TextView mTextStep;
     private TextView mTextQuestion;
     private TextView mTextAnswerA;
     private TextView mTextAnswerB;
@@ -36,10 +37,14 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
         mNodeDAO = new NodeDAO(this);
         Node currentNode =  mNodeDAO.readWhere(Constants.COLUMN_ID, nodeID);
 
+        mTextStep = (TextView) findViewById(R.id.activity_question_step);
+
         mTextQuestion = (TextView) findViewById(R.id.activity_question_step);
+
         mTextAnswerA = (TextView) findViewById(R.id.activity_question_answer_a);
         mTextAnswerB = (TextView) findViewById(R.id.activity_question_answer_b);
 
+        mTextStep.setText(currentNode.getQuestion());
         mTextQuestion.setText(currentNode.getText());
         mTextAnswerA.setText(currentNode.getAnswer1());
         mTextAnswerB.setText(currentNode.getAnswer2());

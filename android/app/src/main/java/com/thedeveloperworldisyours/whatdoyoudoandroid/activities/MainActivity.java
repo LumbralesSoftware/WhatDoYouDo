@@ -61,7 +61,6 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             clearDB();
             getMissions();
         }else if(exitsDB()){
-            clearDB();
             getInfoMissionFromDB();
             buildList(mMissionDAO.readAllAsc());
         }else{

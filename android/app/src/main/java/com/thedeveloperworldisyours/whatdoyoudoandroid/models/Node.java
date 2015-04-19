@@ -19,6 +19,7 @@ public class Node {
     public transient static final String COLUMN_TEXT = "text";
     public transient static final String COLUMN_NAME = "name";
     public transient static final String COLUMN_ID = "_id";
+    public transient static final String COLUMN_QUESTION = "question";
 
     @Expose
     @Column(name = COLUMN_ID, isPrimaryKey = true)
@@ -51,6 +52,9 @@ public class Node {
     @Expose
     @Column(name = COLUMN_MISSION)
     private String mission;
+    @Expose
+    @Column(name = COLUMN_QUESTION)
+    private String question;
 
     /**
      *
@@ -204,13 +208,31 @@ public class Node {
     public String getMission() {
         return mission;
     }
-
     /**
      *
      * @param mission
      * The mission
      */
     public void setMission(String mission) {
+
         this.mission = mission;
     }
+
+    /**
+     *
+     * @return
+     * The question
+     */
+    public String getQuestion() {
+        return question;
+    }
+    /**
+     *
+     * @param question
+     * The question
+     */
+    public void setQuestion(String question) {
+        this.question = question;
+    }
+
 }
