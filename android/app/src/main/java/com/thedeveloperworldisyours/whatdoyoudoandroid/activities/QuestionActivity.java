@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
@@ -13,7 +14,7 @@ import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.NodeDAO;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Node;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 
-public class QuestionActivity extends ActionBarActivity {
+public class QuestionActivity extends ActionBarActivity implements View.OnClickListener {
 
     private TextView mTextQuestion;
     private TextView mTextAnswerA;
@@ -26,16 +27,23 @@ public class QuestionActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        // Replace by get current node
-        Node currentNode = new Node();
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            return;
+        }
+        String nodeID = extras.getString(Constants.ID_INTENT_NODE);
 
-        mTextQuestion = (TextView) findViewById(R.id.activity_question_what_do_you_do);
+        mNodeDAO = new NodeDAO(this);
+        Node currentNode =  mNodeDAO.readWhere(Constants.COLUMN_ID, nodeID);
+
+        mTextQuestion = (TextView) findViewById(R.id.activity_question_step);
         mTextAnswerA = (TextView) findViewById(R.id.activity_question_answer_a);
         mTextAnswerB = (TextView) findViewById(R.id.activity_question_answer_b);
 
         mTextQuestion.setText(currentNode.getText());
         mTextAnswerA.setText(currentNode.getAnswer1());
         mTextAnswerB.setText(currentNode.getAnswer2());
+
 
     }
 
@@ -93,5 +101,16 @@ public class QuestionActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.activity_question_a_button:
+                break;
+            case R.id.activity_question_b_button:
+                break;
+            default:
+        }
     }
 }

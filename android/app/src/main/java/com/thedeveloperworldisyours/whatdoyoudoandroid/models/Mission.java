@@ -27,7 +27,7 @@ public class Mission {
     private String text;
     @Expose
     @Column(name = COLUMN_BEGINNING)
-    private double beginning;
+    private String beginning;
 
     /**
      *
@@ -88,7 +88,7 @@ public class Mission {
      * @return
      * The beginning
      */
-    public double getBeginning() {
+    public String getBeginning() {
         return beginning;
     }
 
@@ -97,7 +97,7 @@ public class Mission {
      * @param beginning
      * The beginning
      */
-    public void setBeginning(Integer beginning) {
+    public void setBeginning(String beginning) {
         this.beginning = beginning;
     }
 
