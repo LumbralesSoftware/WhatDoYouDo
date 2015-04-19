@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
@@ -24,7 +23,7 @@ public class IntroActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
+        setContentView(R.layout.intro_activity);
 
         mTextIntro = (TextView) findViewById(R.id.activity_intro_text);
         mNumberText = (TextView) findViewById(R.id.activity_intro_number);

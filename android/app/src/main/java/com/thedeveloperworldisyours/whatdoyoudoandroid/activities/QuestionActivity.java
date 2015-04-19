@@ -1,12 +1,12 @@
 package com.thedeveloperworldisyours.whatdoyoudoandroid.activities;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
@@ -21,12 +21,13 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
     private TextView mTextAnswerA;
     private TextView mTextAnswerB;
     private NodeDAO mNodeDAO;
+    private Node mCurrentNode;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question);
+        setContentView(R.layout.question_activity);
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -35,7 +36,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
         String nodeID = extras.getString(Constants.ID_INTENT_NODE);
 
         mNodeDAO = new NodeDAO(this);
-        Node currentNode =  mNodeDAO.readWhere(Constants.COLUMN_ID, nodeID);
+        mCurrentNode =  mNodeDAO.readWhere(Constants.COLUMN_ID, nodeID);
 
         mTextStep = (TextView) findViewById(R.id.activity_question_step);
 
@@ -44,76 +45,53 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
         mTextAnswerA = (TextView) findViewById(R.id.activity_question_answer_a);
         mTextAnswerB = (TextView) findViewById(R.id.activity_question_answer_b);
 
-        mTextStep.setText(currentNode.getQuestion());
-        mTextQuestion.setText(currentNode.getText());
-        mTextAnswerA.setText(currentNode.getAnswer1());
-        mTextAnswerB.setText(currentNode.getAnswer2());
+        Button AButton = (Button) findViewById(R.id.activity_question_a_button);
+        Button BButton = (Button) findViewById(R.id.activity_question_b_button);
+
+        AButton.setOnClickListener(this);
+        BButton.setOnClickListener(this);
+
+        mTextStep.setText(mCurrentNode.getQuestion());
+        mTextQuestion.setText(mCurrentNode.getText());
+        mTextAnswerA.setText(mCurrentNode.getAnswer1());
+        mTextAnswerB.setText(mCurrentNode.getAnswer2());
 
 
     }
 
-    private void nextEvent()
+    private void nextEvent(String nodeID)
     {
-        // Replace by get current node
-        Node currentNode = new Node();
-        String idNextNode;
-        // Click on Answer 1
-        if (true) {
-            idNextNode = currentNode.getNode1();
-        } else {
-            idNextNode = currentNode.getNode2();
-        }
-        Node nextNode = mNodeDAO.readWhere(Constants.COLUMN_ID, idNextNode);
+        Node nextNode = mNodeDAO.readWhere(Constants.COLUMN_ID, nodeID);
 
         Intent intent;
         // Send next node to activity
         switch (nextNode.getStatus()) {
             case Constants.STATUS_WIN:
-                intent = new Intent(this, IntroActivity.class);
+                intent = new Intent(this, FinishActivity.class);
+                intent.putExtra(Constants.ID_INTENT_FINISH, nodeID);
                 startActivity(intent);
-                finish();
                 break;
             case Constants.STATUS_LOSE:
-                intent = new Intent(this, IntroActivity.class);
+                intent = new Intent(this, FinishActivity.class);
+                intent.putExtra(Constants.ID_INTENT_FINISH, nodeID);
                 startActivity(intent);
-                finish();
                 break;
             case Constants.STATUS_CONTINUE:
                 intent = new Intent(this, QuestionActivity.class);
+                intent.putExtra(Constants.ID_INTENT_NODE, nodeID);
                 startActivity(intent);
+        }
                 finish();
-        }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_question, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.activity_question_a_button:
+                nextEvent(mCurrentNode.getNode1());
                 break;
             case R.id.activity_question_b_button:
+                nextEvent(mCurrentNode.getNode2());
                 break;
             default:
         }
