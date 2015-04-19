@@ -22,7 +22,7 @@ public class Node {
 
     @Expose
     @Column(name = COLUMN_ID, isPrimaryKey = true)
-    private double id;
+    private String id;
     @Expose
     @Column(name = COLUMN_NAME)
     private String name;
@@ -43,21 +43,21 @@ public class Node {
     @SerializedName("node_1")
     @Expose
     @Column(name = COLUMN_NODE_1)
-    private float node1;
+    private String node1;
     @SerializedName("node_2")
     @Expose
     @Column(name = COLUMN_NODE_2)
-    private float node2;
+    private String node2;
     @Expose
     @Column(name = COLUMN_MISSION)
-    private float mission;
+    private String mission;
 
     /**
      *
      * @return
      * The id
      */
-    public double getId() {
+    public String getId() {
         return id;
     }
 
@@ -66,7 +66,7 @@ public class Node {
      * @param id
      * The id
      */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -165,7 +165,7 @@ public class Node {
      * @return
      * The node1
      */
-    public float getNode1() {
+    public String getNode1() {
         return node1;
     }
 
@@ -174,7 +174,7 @@ public class Node {
      * @param node1
      * The node_1
      */
-    public void setNode1(float node1) {
+    public void setNode1(String node1) {
         this.node1 = node1;
     }
 
@@ -183,7 +183,7 @@ public class Node {
      * @return
      * The node2
      */
-    public float getNode2() {
+    public String getNode2() {
         return node2;
     }
 
@@ -192,7 +192,7 @@ public class Node {
      * @param node2
      * The node_2
      */
-    public void setNode2(float node2) {
+    public void setNode2(String node2) {
         this.node2 = node2;
     }
 
@@ -201,7 +201,7 @@ public class Node {
      * @return
      * The mission
      */
-    public float getMission() {
+    public String getMission() {
         return mission;
     }
 
@@ -210,7 +210,7 @@ public class Node {
      * @param mission
      * The mission
      */
-    public void setMission(Integer mission) {
+    public void setMission(String mission) {
         this.mission = mission;
     }
 }

@@ -3,6 +3,7 @@ package com.thedeveloperworldisyours.whatdoyoudoandroid.dao;
 import android.content.Context;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Mission;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 
 import library.SQLiteSimpleDAO;
 
@@ -12,6 +13,6 @@ import library.SQLiteSimpleDAO;
 public class MissionDAO extends SQLiteSimpleDAO<Mission> {
 
     public MissionDAO(Context context) {
-        super(Mission.class, context);
+        super(Mission.class, context, Constants.DATABASE_NAME);
     }
 }

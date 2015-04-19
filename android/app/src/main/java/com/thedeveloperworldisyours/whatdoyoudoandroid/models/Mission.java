@@ -18,7 +18,7 @@ public class Mission {
 
     @Expose
     @Column(name = COLUMN_ID, isPrimaryKey = true)
-    private double id;
+    private String id;
     @Expose
     @Column(name = COLUMN_NAME)
     private String name;
@@ -34,7 +34,7 @@ public class Mission {
      * @return
      * The id
      */
-    public double getId() {
+    public String getId() {
         return id;
     }
 
@@ -43,7 +43,7 @@ public class Mission {
      * @param id
      * The id
      */
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 

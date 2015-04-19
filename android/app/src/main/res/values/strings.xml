@@ -3,6 +3,7 @@
 
     <string name="app_name">What do you do?</string>
     <string name="action_settings">Settings</string>
+    <string name="no_connection">Error connection. You must check your connection</string>
 
     <string name="activity_main_mission">Mission</string>
     <string name="activity_main_our_apps">Our Apps</string>

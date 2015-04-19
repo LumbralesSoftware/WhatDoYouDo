@@ -26,7 +26,7 @@ public class Client {
     @GET("/missions/")
     void getMissions( Callback<List<Mission>> callback);
     @GET("/nodes/")
-        void getNodes(Callback<List<Node>> callback);
+        void getNodes(@Query("mission") String mission,Callback<List<Node>> callback);
 }
 
     public static ClientInterface initRestAdapter()
@@ -40,18 +40,5 @@ public class Client {
                 .create(ClientInterface.class);
     }
 
-    public static void getMission(){
-        Callback <List<Mission>> callback = new Callback<List<Mission>>() {
-            @Override
-            public void success(List<Mission> missions, Response response) {
-                Log.v("Client", "success");
-            }
 
-            @Override
-            public void failure(RetrofitError error) {
-
-            }
-
-        };
-    }
 }
