@@ -1,5 +1,6 @@
 package com.thedeveloperworldisyours.whatdoyoudoandroid.activities;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -8,14 +9,67 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.NodeDAO;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Node;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 
 public class QuestionActivity extends ActionBarActivity {
+
+    private TextView mTextQuestion;
+    private TextView mTextAnswerA;
+    private TextView mTextAnswerB;
+    private NodeDAO mNodeDAO;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+
+        // Replace by get current node
+        Node currentNode = new Node();
+
+        mTextQuestion = (TextView) findViewById(R.id.activity_question_what_do_you_do);
+        mTextAnswerA = (TextView) findViewById(R.id.activity_question_answer_a);
+        mTextAnswerB = (TextView) findViewById(R.id.activity_question_answer_b);
+
+        mTextQuestion.setText(currentNode.getText());
+        mTextAnswerA.setText(currentNode.getAnswer1());
+        mTextAnswerB.setText(currentNode.getAnswer2());
+
+    }
+
+    private void nextEvent()
+    {
+        // Replace by get current node
+        Node currentNode = new Node();
+        String idNextNode;
+        // Click on Answer 1
+        if (true) {
+            idNextNode = currentNode.getNode1();
+        } else {
+            idNextNode = currentNode.getNode2();
+        }
+        Node nextNode = mNodeDAO.readWhere(Constants.COLUMN_ID, idNextNode);
+
+        Intent intent;
+        // Send next node to activity
+        switch (nextNode.getStatus()) {
+            case Constants.STATUS_WIN:
+                intent = new Intent(this, IntroActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case Constants.STATUS_LOSE:
+                intent = new Intent(this, IntroActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            case Constants.STATUS_CONTINUE:
+                intent = new Intent(this, QuestionActivity.class);
+                startActivity(intent);
+                finish();
+        }
     }
 
 
