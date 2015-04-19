@@ -1,7 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
-    android:layout_height="?android:attr/listPreferredItemHeight"
-    android:padding="6dip" >
+    android:layout_height="wrap_content">
 
     <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
         android:id="@+id/row_mission_firstLine"

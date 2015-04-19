@@ -24,7 +24,7 @@ import retrofit.http.Query;
 public class Client {
     public interface ClientInterface{
     @GET("/missions/")
-    void getMissions( Callback<List<Mission>> callback);
+    void getMissions(@Query("language") String languaje, Callback<List<Mission>> callback);
     @GET("/nodes/")
         void getNodes(@Query("mission") String mission,Callback<List<Node>> callback);
 }

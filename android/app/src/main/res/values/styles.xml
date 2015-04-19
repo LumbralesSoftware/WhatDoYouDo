@@ -26,7 +26,7 @@
     </style>
     <style name="TextViewListStyle" parent="@android:style/TextAppearance.Medium">
         <item name="android:background">@drawable/button_background_selector</item><!-- only way to change this is to change the src image -->
-        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/blue</item>
@@ -36,6 +36,7 @@
         <item name="android:background">@drawable/button_circle_background_selector</item><!-- only way to change this is to change the src image -->
         <item name="android:layout_width">60dp</item>
         <item name="android:layout_height">60dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
         <item name="android:textColor">@color/blue</item>
         <item name="android:textSize">20sp</item>
     </style>
@@ -43,7 +44,6 @@
         <item name="android:padding">5dp</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">center_horizontal</item>
     </style>
 
 </resources>

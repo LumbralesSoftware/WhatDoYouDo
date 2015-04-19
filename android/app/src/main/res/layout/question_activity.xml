@@ -1,74 +1,85 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/crema"
-    tools:context="com.thedeveloperworldisyours.whatdoyoudoandroid.activities.QuestionActivity">
-
-    <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/TextNormalStyle"
-        android:id="@+id/activity_question_step"
-        android:text="@string/activity_question_condition" />
-
+    android:id="@+id/ScrollView01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/crema"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:orientation="vertical"
+        tools:context="com.thedeveloperworldisyours.whatdoyoudoandroid.activities.QuestionActivity">
 
         <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
-            android:id="@+id/activity_question_what_do_you_do"
-            style="@style/TitleAppStyle"
+            android:id="@+id/activity_question_step"
+            style="@style/TextNormalStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_marginBottom="50dp"
             android:text="@string/activity_question_condition" />
 
-        <LinearLayout
-            style="@style/NormalLayoutStyle"
-            android:orientation="horizontal">
-
-            <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
-                android:id="@+id/activity_question_a_button"
-                style="@style/SmallButtonStyle"
-                android:text="@string/activity_question_a" />
-
-            <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
-                android:id="@+id/activity_question_answer_a"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextNormalStyle"
-                android:text="activity_question_answer_a" />
-
-        </LinearLayout>
 
         <LinearLayout
-            style="@style/NormalLayoutStyle"
-            android:orientation="horizontal">
-
-            <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
-                android:id="@+id/activity_question_b_button"
-                style="@style/SmallButtonStyle"
-                android:text="@string/activity_question_b" />
+            android:id="@+id/activity_question_linear_layout_vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
 
             <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
-                android:id="@+id/activity_question_answer_b"
+                android:id="@+id/activity_question_what_do_you_do"
+                style="@style/TitleAppStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/TextNormalStyle"
-                android:text="activity_question_answer_b" />
+                android:gravity="center"
+                android:text="@string/activity_question_condition" />
+
+            <LinearLayout
+                style="@style/NormalLayoutStyle"
+                android:orientation="horizontal">
+
+                <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
+                    android:id="@+id/activity_question_a_button"
+                    style="@style/SmallButtonStyle"
+                    android:text="@string/activity_question_a" />
+
+                <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
+                    android:id="@+id/activity_question_answer_a"
+                    style="@style/TextNormalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="activity_question_answer_a" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/NormalLayoutStyle"
+                android:orientation="horizontal">
+
+                <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
+                    android:id="@+id/activity_question_b_button"
+                    style="@style/SmallButtonStyle"
+                    android:text="@string/activity_question_b" />
+
+                <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
+                    android:id="@+id/activity_question_answer_b"
+                    style="@style/TextNormalStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="activity_question_answer_b" />
+            </LinearLayout>
+
+
         </LinearLayout>
 
 
     </LinearLayout>
-
-
-</RelativeLayout>
+</ScrollView>

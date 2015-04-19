@@ -1,6 +1,7 @@
 package com.thedeveloperworldisyours.whatdoyoudoandroid.activities;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -45,6 +47,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 */
         mListView = (ListView) findViewById(R.id.main_activity_listView);
         mListView.setOnItemClickListener(this);
+
+        Button ourApps = (Button) findViewById(R.id.main_activity_our_apps_button);
+        Button aboutUs = (Button) findViewById(R.id.main_activity_about_us_button);
+
+        ourApps.setOnClickListener(this);
+        aboutUs.setOnClickListener(this);
 
         mMissionDAO = new MissionDAO(this);
         mNodeDAO = new NodeDAO(this);
@@ -102,7 +110,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
 
         };
-        Client.initRestAdapter().getMissions(callback);
+        Client.initRestAdapter().getMissions(Utils.checkLanguaje(), callback);
     }
 
     public void insertMission(List<Mission> listMission){
@@ -135,7 +143,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             mNodeDAO.create(listNodes.get(i));
         }
     }
-
+/*
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -156,7 +164,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @Override
     public void onClick(View v) {
@@ -164,6 +172,14 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             /*case R.id.main_activity_mission_button:
                 startMission();
                 break;*/
+            case R.id.main_activity_about_us_button:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.ABOUT_US));
+                startActivity(browserIntent);
+                break;
+            case R.id.main_activity_our_apps_button:
+                Intent browserIntentApps = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.OUR_APPS));
+                startActivity(browserIntentApps);
+                break;
             default:
         }
 

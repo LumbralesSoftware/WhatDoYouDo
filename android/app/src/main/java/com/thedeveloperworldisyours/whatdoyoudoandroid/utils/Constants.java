@@ -15,4 +15,6 @@ public class Constants {
     public static final String ID_INTENT_MISSION = "MainActivity";
     public static final String ID_INTENT_NODE = "IntroActivity";
     public static final String ID_INTENT_FINISH = "QuestionActivity";
+    public static final String OUR_APPS = "https://play.google.com/store/apps/developer?id=Lumbrales+Software";
+    public static final String ABOUT_US = "http://www.lumbrales-software.com/";
 }

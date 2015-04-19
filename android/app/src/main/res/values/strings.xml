@@ -23,7 +23,7 @@
     <string name="activity_question_condition">What do you do?</string>
     <string name="activity_question_a">A</string>
     <string name="activity_question_b">B</string>
-    <string name="title_activity_finish_acitivity">FinishAcitivity</string>
+    <string name="title_activity_finish_acitivity">The End</string>
     <string name="activity_finish_share">Share</string>
     <string name="hello_world">Hello world!</string>
     <string name="download">Download</string>

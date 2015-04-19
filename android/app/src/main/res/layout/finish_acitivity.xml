@@ -2,24 +2,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/crema"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.thedeveloperworldisyours.whatdoyoudoandroid.activities.FinishActivity">
 
-    <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
-        android:id="@+id/activity_finish_text"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/activity_question_linear_layout_vertical"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        style="@style/TextNormalStyle" />
 
-    <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
-        android:text="@string/activity_finish_share"
-        android:id="@+id/activity_finish_share_button"
-        android:layout_alignParentBottom="true"
-        style="@style/NormalButtonStyle"/>
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
+            android:id="@+id/activity_finish_text"
+            style="@style/TextNormalStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="gravity" />
+
+        <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
+            android:id="@+id/activity_finish_share_button"
+            style="@style/NormalButtonStyle"
+            android:layout_below="@+id/activity_finish_text"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@string/activity_finish_share" />
+    </LinearLayout>
 
 </RelativeLayout>
