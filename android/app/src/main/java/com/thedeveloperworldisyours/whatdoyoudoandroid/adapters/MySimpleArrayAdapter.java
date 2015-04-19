@@ -35,6 +35,7 @@ public class MySimpleArrayAdapter extends ArrayAdapter<Mission> {
         TextView textView = (TextView) rowView.findViewById(R.id.row_mission_firstLine);
         ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
         textView.setText(mValues.get(position).getName());
+        rowView.setTag(mValues.get(position).getId());
         return rowView;
     }
 

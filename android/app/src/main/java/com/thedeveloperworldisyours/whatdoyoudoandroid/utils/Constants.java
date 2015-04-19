@@ -12,4 +12,6 @@ public class Constants {
     public static final int STATUS_WIN = 1;
     public static final int STATUS_LOSE = 2;
     public static final int STATUS_CONTINUE = 3;
+    public static final String ID_INTENT_MISSION = "MainActivity";
+    public static final String ID_INTENT_NODE = "IntroActivity";
 }

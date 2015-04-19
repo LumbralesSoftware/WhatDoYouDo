@@ -19,6 +19,7 @@ import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.MissionDAO;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.NodeDAO;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Mission;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Node;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Utils;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.webservice.Client;
 
@@ -56,9 +57,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     public void getInfo(){
-        /*if (Utils.isOnline(this)) {
+        if (Utils.isOnline(this)) {
             getMissions();
-        }else */if(exitsDB()){
+        }else if(exitsDB()){
             getInfoMissionFromDB();
             buildList(mMissionDAO.readAllAsc());
         }else{
@@ -105,6 +106,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             mMissionDAO.create(listMission.get(i));
             getNodes(listMission.get(i).getId());
         }
+        getInfoMissionFromDB();
+        buildList(mMissionDAO.readAllAsc());
     }
 
     public void getNodes(String idMission){
@@ -162,13 +165,15 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     }
 
-    public void startMission(){
+    public void startMission(String id){
         Intent intent = new Intent(this, IntroActivity.class);
+        intent.putExtra(Constants.ID_INTENT_MISSION, id);
         startActivity(intent);
     }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        startMission();
+        String tag = view.getTag().toString();
+        startMission(tag);
     }
 }

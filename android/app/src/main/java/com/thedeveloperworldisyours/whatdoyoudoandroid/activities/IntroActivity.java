@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.MissionDAO;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Mission;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 
 public class IntroActivity extends ActionBarActivity {
@@ -16,6 +18,7 @@ public class IntroActivity extends ActionBarActivity {
     private Runnable mRunnable;
     private TextView mTextIntro;
     private TextView mNumberText;
+    private String mNextNode;
 
 
     @Override
@@ -25,6 +28,15 @@ public class IntroActivity extends ActionBarActivity {
 
         mTextIntro = (TextView) findViewById(R.id.activity_intro_text);
         mNumberText = (TextView) findViewById(R.id.activity_intro_number);
+        Bundle extras = getIntent().getExtras();
+        if (extras == null) {
+            return;
+        }
+        String missionID = extras.getString(Constants.ID_INTENT_MISSION);
+        MissionDAO missionDAO = new MissionDAO(this);
+        Mission mission = missionDAO.readWhere(Constants.COLUMN_ID, missionID);
+        mTextIntro.setText(mission.getText());
+        mNextNode = mission.getBeginning();
 
         timer();
     }
@@ -80,6 +92,7 @@ public class IntroActivity extends ActionBarActivity {
 
     public void goToQuestion() {
         Intent intent = new Intent(this, QuestionActivity.class);
+        intent.putExtra(Constants.ID_INTENT_NODE,mNextNode);
         startActivity(intent);
         finish();
     }
