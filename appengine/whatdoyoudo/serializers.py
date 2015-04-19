@@ -10,4 +10,4 @@ class MissionSerializer(serializers.ModelSerializer):
 class MissionNodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = MissionNode
-        fields = ('id', 'name', 'text', 'answer_1', 'answer_2', 'status', 'node_1', 'node_2', 'mission')
+        fields = ('id', 'name', 'text', 'question', 'answer_1', 'answer_2', 'status', 'node_1', 'node_2', 'mission')
