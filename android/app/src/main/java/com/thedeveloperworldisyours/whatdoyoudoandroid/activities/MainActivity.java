@@ -58,13 +58,20 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     public void getInfo(){
         if (Utils.isOnline(this)) {
+            clearDB();
             getMissions();
         }else if(exitsDB()){
+            clearDB();
             getInfoMissionFromDB();
             buildList(mMissionDAO.readAllAsc());
         }else{
             Toast.makeText(this,R.string.no_connection,Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void clearDB(){
+        mMissionDAO.deleteAll();
+        mNodeDAO.deleteAll();
     }
 
     public void getInfoMissionFromDB(){
