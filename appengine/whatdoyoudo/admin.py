@@ -5,7 +5,7 @@ class MissionAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "beginning", "created")
     #ordering = ('-created',)
 class MissionNodeAdmin(admin.ModelAdmin):
-    list_display = ("id", "name", "status", "mission", "node_1", "node_2", "created")
+    list_display = ("id", "name", "question", "status", "mission", "node_1", "node_2", "created")
     list_filter = ('mission__id', 'status',)
     #ordering = ('-created',)
 
