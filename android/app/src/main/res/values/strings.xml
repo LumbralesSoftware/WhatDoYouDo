@@ -19,6 +19,7 @@
     <string name="activity_intro_seven">7</string>
     <string name="activity_intro_eight">8</string>
     <string name="activity_intro_nine">9</string>
+    <string name="activity_intro_jump">Jump</string>
     <string name="activity_question_title">Question</string>
     <string name="activity_question_condition">What do you do?</string>
     <string name="activity_question_a">A</string>

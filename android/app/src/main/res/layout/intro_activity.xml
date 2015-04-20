@@ -24,5 +24,11 @@
         android:layout_below="@+id/activity_intro_text"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true" />
+    <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
+        android:id="@+id/activity_intro_jump_button"
+        style="@style/NormalButtonStyle"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/activity_intro_jump" />
 
 </RelativeLayout>

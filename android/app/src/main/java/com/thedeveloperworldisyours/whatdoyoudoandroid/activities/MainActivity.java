@@ -64,7 +64,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
     public void getInfo(){
         if (Utils.isOnline(this)) {
-            clearDB();
+
             getMissions();
         }else if(exitsDB()){
             getInfoMissionFromDB();
@@ -101,6 +101,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             @Override
             public void success(List<Mission> missions, Response response) {
                 Log.v("Client", "success");
+                clearDB();
                 insertMission(missions);
             }
 
@@ -128,6 +129,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             public void success(List<Node> nodes, Response response) {
                 Log.v("Client", "success");
                 insertNodes(nodes);
+
             }
 
             @Override

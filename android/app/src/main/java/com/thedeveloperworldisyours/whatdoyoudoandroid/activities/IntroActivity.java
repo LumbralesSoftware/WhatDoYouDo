@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
@@ -11,7 +13,7 @@ import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.MissionDAO;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Mission;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 
-public class IntroActivity extends ActionBarActivity {
+public class IntroActivity extends ActionBarActivity implements View.OnClickListener {
 
     private final Handler mHandler = new Handler();
     private Runnable mRunnable;
@@ -36,6 +38,9 @@ public class IntroActivity extends ActionBarActivity {
         Mission mission = missionDAO.readWhere(Constants.COLUMN_ID, missionID);
         mTextIntro.setText(mission.getText());
         mNextNode = mission.getBeginning();
+
+        Button jump = (Button) findViewById(R.id.activity_intro_jump_button);
+        jump.setOnClickListener(this);
 
         timer();
     }
@@ -91,7 +96,7 @@ public class IntroActivity extends ActionBarActivity {
 
     public void goToQuestion() {
         Intent intent = new Intent(this, QuestionActivity.class);
-        intent.putExtra(Constants.ID_INTENT_NODE,mNextNode);
+        intent.putExtra(Constants.ID_INTENT_NODE, mNextNode);
         startActivity(intent);
         finish();
     }
@@ -100,5 +105,15 @@ public class IntroActivity extends ActionBarActivity {
     protected void onPause() {
         mHandler.removeCallbacks(mRunnable);
         super.onPause();
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.activity_intro_jump_button:
+                mHandler.removeCallbacks(mRunnable);
+                goToQuestion();
+                break;
+        }
     }
 }
