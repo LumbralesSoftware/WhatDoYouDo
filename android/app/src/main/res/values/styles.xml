@@ -14,7 +14,7 @@
     </style>
     <style name="TextNormalStyle" parent="@android:style/TextAppearance.Medium">
         <item name="android:textColor">@color/blue</item>
-        <item name="android:padding">3dp</item>
+        <item name="android:padding">5dp</item>
         <item name="android:textSize">20sp</item>
     </style>
     <style name="NormalButtonStyle" parent="@android:style/Widget.Button">

@@ -81,23 +81,7 @@
 
             </RelativeLayout>
 
-            <LinearLayout
-                style="@style/NormalLayoutStyle"
-                android:orientation="horizontal">
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                style="@style/NormalLayoutStyle"
-                android:orientation="horizontal">
-
-
-            </LinearLayout>
-
-
         </LinearLayout>
-
 
     </LinearLayout>
 </ScrollView>
