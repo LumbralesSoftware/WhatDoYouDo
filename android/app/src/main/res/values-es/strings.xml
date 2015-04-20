@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">What do you do?</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="no_connection">Error de conexión. Debes comprobar tu conexión.</string>
+    <string name="activity_main_mission">Misión</string>
+    <string name="activity_main_our_apps">Nuestras Apps</string>
+    <string name="activity_main_about_us">Acerca de</string>
+    <string name="activity_intro_title">Importante</string>
+    <string name="activity_intro_self_destruction">Se autodestruirá.</string>
+    <string name="activity_intro_cero">0</string>
+    <string name="activity_intro_one">1</string>
+    <string name="activity_intro_two">2</string>
+    <string name="activity_intro_three">3</string>
+    <string name="activity_intro_four">4</string>
+    <string name="activity_intro_five">5</string>
+    <string name="activity_intro_six">6</string>
+    <string name="activity_intro_seven">7</string>
+    <string name="activity_intro_eight">8</string>
+    <string name="activity_intro_nine">9</string>
+    <string name="activity_intro_jump">Saltar</string>
+    <string name="activity_question_title">Pregunta</string>
+    <string name="activity_question_condition">What do you do?</string>
+    <string name="activity_question_a">A</string>
+    <string name="activity_question_b">B</string>
+    <string name="title_activity_finish_acitivity">Fin</string>
+    <string name="activity_finish_share">Compartir</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="download">Descargar https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>
+    <string name="title_email_dialog">Compartir</string>
+
+</resources>
