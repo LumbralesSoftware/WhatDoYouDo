@@ -1,9 +1,9 @@
-import datetime
 from django.db import models
 from django.core.validators import MaxLengthValidator
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from django.conf import settings
+from django.utils import timezone
 
 
 class Mission(models.Model):
@@ -11,8 +11,12 @@ class Mission(models.Model):
     name = models.CharField(max_length=200, verbose_name="Mission name")
     text = models.TextField(max_length=1000, verbose_name="Mission Description")
     beginning = models.ForeignKey('MissionNode', verbose_name="First node", related_name="beginning", null=True, blank=True)
-    created = models.DateTimeField(verbose_name="Created date", null=True, blank=True, auto_now_add=True)
+    created = models.DateTimeField(verbose_name="Created date", null=True, blank=True, default=lambda:timezone.now())
     language = models.CharField(max_length=7, choices=settings.LANGUAGES, null=True, blank=True)
+    active = models.BooleanField(verbose_name="Is this mission active?", default=True)
+
+    class Meta:
+        ordering = ['created']
 
     def __str__(self):
         return unicode(self).encode('utf-8')
@@ -35,6 +39,9 @@ class MissionNode(models.Model):
     node_2 = models.ForeignKey('MissionNode', verbose_name="Answer 2 next", related_name="next_2", null=True, blank=True)
     mission = models.ForeignKey('Mission', verbose_name="Mission", related_name="mission")
     created = models.DateTimeField(verbose_name="Created date", null=True, blank=True, auto_now_add=True)
+
+    class Meta:
+        ordering = ['name']
 
     def __str__(self):
         return unicode(self).encode('utf-8')

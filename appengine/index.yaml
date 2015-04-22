@@ -10,13 +10,6 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
-- kind: cspreports_cspreport
-  properties:
-  - name: created
-    direction: desc
-  - name: __key__
-    direction: desc
-
 - kind: djangae_gaedatastoreuser
   properties:
   - name: __key__
@@ -40,6 +33,17 @@ indexes:
 
 - kind: whatdoyoudo_mission
   properties:
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: active
+  - name: created
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: created
   - name: __key__
     direction: desc
 
@@ -70,6 +74,23 @@ indexes:
 
 - kind: whatdoyoudo_missionnode
   properties:
+  - name: mission_id
+  - name: name
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: name
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
   - name: status
   - name: __key__
     direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: active
+  - name: language
+  - name: created

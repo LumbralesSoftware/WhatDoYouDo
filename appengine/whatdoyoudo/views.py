@@ -17,7 +17,7 @@ class MissionViewSet(viewsets.ModelViewSet):
         Optionally restricts the returned mission to a given language
         by filtering against a `language` query parameter in the URL.
         """
-        queryset = Mission.objects.all()
+        queryset = Mission.objects.all().filter(active=True)
         language = self.request.QUERY_PARAMS.get('language', None)
         if language is not None:
             queryset = queryset.filter(language=language)
