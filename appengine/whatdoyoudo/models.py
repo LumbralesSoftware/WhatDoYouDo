@@ -31,7 +31,7 @@ class MissionNode(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200, verbose_name="Stop name")
     text = models.TextField(max_length=1000, verbose_name="Description text/question")
-    question = models.CharField(max_length=300, verbose_name="Question", null=True, blank=True)
+    question = models.CharField(max_length=300, verbose_name="Question", null=True, blank=True, default="What do you do?")
     answer_1 = models.CharField(max_length=200, verbose_name="Answer 1", null=True, blank=True)
     answer_2 = models.CharField(max_length=200, verbose_name="Answer 2", null=True, blank=True)
     status = models.IntegerField(max_length=1, choices=STATUS, verbose_name="Node status", null=True, default=3)
