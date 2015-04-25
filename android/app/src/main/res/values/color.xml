@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="crema">#f8fae6</color>
+    <color name="crema_answer">#F8FAF0</color>
     <color name="white">#ffffff</color>
     <color name="blue">#3399FF</color>
     <color name="blue_soft">#8ad0e8</color>

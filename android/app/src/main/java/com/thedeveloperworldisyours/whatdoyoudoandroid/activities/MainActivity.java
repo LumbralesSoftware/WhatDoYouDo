@@ -1,5 +1,6 @@
 package com.thedeveloperworldisyours.whatdoyoudoandroid.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -36,6 +37,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     private MissionDAO mMissionDAO;
     private NodeDAO mNodeDAO;
     private ListView mListView;
+    private ProgressDialog mProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,8 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 */
         mListView = (ListView) findViewById(R.id.main_activity_listView);
         mListView.setOnItemClickListener(this);
+
+        mProgress = new ProgressDialog(this,R.style.Transparent);
 
         Button ourApps = (Button) findViewById(R.id.main_activity_our_apps_button);
         Button aboutUs = (Button) findViewById(R.id.main_activity_about_us_button);
@@ -63,12 +67,12 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     public void getInfo(){
-        if (Utils.isOnline(this)) {
-
-            getMissions();
-        }else if(exitsDB()){
+        if(exitsDB()){
             getInfoMissionFromDB();
             buildList(mMissionDAO.readAllAsc());
+        }else if (Utils.isOnline(this)) {
+
+            getMissions();
         }else{
             Toast.makeText(this,R.string.no_connection,Toast.LENGTH_SHORT).show();
         }
@@ -97,6 +101,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     public void getMissions(){
+        mProgress.show();
         Callback<List<Mission>> callback = new Callback<List<Mission>>() {
             @Override
             public void success(List<Mission> missions, Response response) {
@@ -106,7 +111,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             }
 
             @Override
-            public void failure(RetrofitError error) {
+            public void failure(RetrofitError error)
+            {
+                mProgress.cancel();
                 Log.v("Client", "failure");
             }
 
@@ -129,11 +136,13 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             public void success(List<Node> nodes, Response response) {
                 Log.v("Client", "success");
                 insertNodes(nodes);
+                mProgress.cancel();
 
             }
 
             @Override
             public void failure(RetrofitError error) {
+                mProgress.cancel();
                 Log.v("Client", "failure");
             }
         };
@@ -145,7 +154,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             mNodeDAO.create(listNodes.get(i));
         }
     }
-/*
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -161,12 +170,19 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_refresh) {
+
+            if (Utils.isOnline(this)) {
+                getMissions();
+            }else{
+                Toast.makeText(this,R.string.no_connection,Toast.LENGTH_SHORT).show();
+            }
+
             return true;
         }
 
         return super.onOptionsItemSelected(item);
-    }*/
+    }
 
     @Override
     public void onClick(View v) {

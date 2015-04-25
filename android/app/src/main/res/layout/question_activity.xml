@@ -64,7 +64,6 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
                 <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
                     android:id="@+id/activity_question_b_button"
                     style="@style/SmallButtonStyle"
@@ -78,6 +77,9 @@
                     android:layout_height="fill_parent"
                     android:layout_toRightOf="@+id/activity_question_b_button"
                     android:text="activity_question_answer_b" />
+
+
+
 
             </RelativeLayout>
 
