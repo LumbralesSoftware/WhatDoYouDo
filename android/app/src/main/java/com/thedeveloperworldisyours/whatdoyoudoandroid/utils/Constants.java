@@ -17,4 +17,5 @@ public class Constants {
     public static final String ID_INTENT_FINISH = "QuestionActivity";
     public static final String OUR_APPS = "https://play.google.com/store/apps/developer?id=Lumbrales+Software";
     public static final String ABOUT_US = "http://www.lumbrales-software.com/";
+    public static final String APP_NAME = "market://details?id=com.thedeveloperworldisyours.whatdoyoudoandroid";
 }

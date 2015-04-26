@@ -3,11 +3,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="actionBarStyle">@style/Acitionbarstyle</item>
+        <item name="actionOverflowButtonStyle">@style/OverFlow</item>
     </style>
 
     <style name="Acitionbarstyle" parent="@style/Widget.AppCompat.Light.ActionBar">
         <item name="background">@color/crema</item>
         <item name="titleTextStyle">@style/TitleTextStyle</item>
+    </style>
+        <style name="OverFlow" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@android:drawable/ic_menu_sort_by_size</item>
     </style>
 
     <style name="TitleTextStyle">

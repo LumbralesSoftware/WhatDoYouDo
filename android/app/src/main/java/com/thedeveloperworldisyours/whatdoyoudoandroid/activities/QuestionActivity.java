@@ -160,7 +160,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
     public String builderString(String number){
         StringBuilder builder = new StringBuilder();
         builder.append(getString(R.string.alert_dialog_continue));
-        builder.append(" ");
+        builder.append("    ");
         builder.append(number);
         return builder.toString();
     }

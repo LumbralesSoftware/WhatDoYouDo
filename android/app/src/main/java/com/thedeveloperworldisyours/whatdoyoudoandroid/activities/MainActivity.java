@@ -1,6 +1,8 @@
 package com.thedeveloperworldisyours.whatdoyoudoandroid.activities;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -169,19 +171,43 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
+        switch (item.getItemId()){
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_refresh) {
-
-            if (Utils.isOnline(this)) {
-                getMissions();
-            }else{
-                Toast.makeText(this,R.string.no_connection,Toast.LENGTH_SHORT).show();
-            }
-
-            return true;
+            case R.id.action_refresh:
+                if (Utils.isOnline(this)) {
+                    getMissions();
+                }else{
+                    Toast.makeText(this,R.string.no_connection,Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case  R.id.action_rate_app:
+                appRate();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void appRate(){
+        AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+        alert.setTitle(getString(R.string.alert_dialog_rate_app_title));
+        alert.setMessage(getString(R.string.alert_dialog_rate_app_continue));
+        alert.setCancelable(false);
+        alert.setPositiveButton(getString(R.string.alert_dialog_rate_app_positive),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.APP_NAME)));
+                    }
+                }
+        );
+        alert.setNegativeButton(getString(R.string.alert_dialog_rate_app_cancel),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alertDialog = alert.create();
+        alertDialog.show();
     }
 
     @Override

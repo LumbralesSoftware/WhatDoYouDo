@@ -31,5 +31,10 @@
     <string name="title_email_dialog">Share</string>
     <string name="alert_dialog_continue">Continue?</string>
     <string name="alert_dialog_title">Insert Coin</string>
+    <string name="alert_dialog_rate_app_continue">If you enjoy using What do you do?, please take a minute to rate it. Thanks for you support!</string>
+    <string name="alert_dialog_rate_app_title">Rate What do you do?</string>
+    <string name="alert_dialog_rate_app_cancel">No thanks</string>
+    <string name="alert_dialog_rate_app_positive">Rate</string>
+    <string name="action_rate_app">Rate app</string>
 
 </resources>
