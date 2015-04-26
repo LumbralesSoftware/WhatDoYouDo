@@ -31,12 +31,12 @@ public class Utils {
      * @param destination
      * @param contactName
      */
-    public static void shared(Activity destination, String contactName) {
+    public static void shared(Activity destination, String contactName,boolean win) {
         // If sharing to a contact, put a leading space at the beginning
         if (!contactName.isEmpty()) {
             contactName = " " + contactName;
         }
-        Shared.onShareEmail(destination, contactName);
+        Shared.onShareEmail(destination, contactName,win);
     }
     public static void sharedWhatsapp(Activity destination, String stringShared){
         Intent sendIntent = new Intent();

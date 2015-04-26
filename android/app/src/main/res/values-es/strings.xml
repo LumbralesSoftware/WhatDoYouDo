@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="arrayWin">
+        <item >Quien habla siembra, quien calla, recoge y siembra. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >A quien nueve meses estebo en la barriga de una loca, algo le toca. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Cada uno lleva un loco dentro, o dormido o despierto. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >De médico, poeta y loco, todos tenemos un poco. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Sabio es quien poco habla y mucho calla. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+    </string-array>
+    <string-array name="arrayLose">
+        <item >No hay atajo sin trabajo. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Ata bien y siega bajo, acuenque te cueste trabajo. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Lo importante es participar. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Me volvieron a entrizar. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Adan murió por Eva pero tu morirás por adán. Descárgate What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+    </string-array>
+
     <string name="app_name">What do you do?</string>
     <string name="action_refresh">Refrescar</string>
     <string name="no_connection">Error de conexión. Debes comprobar tu conexión.</string>
