@@ -24,7 +24,7 @@ def clone_mission(modeladmin, request, queryset):
             node_copy.id = None   # (3) set 'id' to None to create new object
             node_copy.mission = mission_copy
             node_copy.created = timezone.now()
-            node_copy.name = node.name + " (copy)"
+            #node_copy.name = node.name + " (copy)"
             node_copy.save()    # initial save
             clonedNodes[node] = node_copy
 
@@ -41,6 +41,11 @@ def clone_mission(modeladmin, request, queryset):
             if newNode.node_2 is not None:
                 newNode.node_2 = clonedNodes[newNode.node_2]
                 newNode.save()
+
+        # Adjust reference to the beginning clonned node
+        if mission_copy.beginning is not None:
+            mission_copy.beginning = clonedNodes[mission_copy.beginning]
+            mission_copy.save()
     return True
 
 class MissionAdmin(admin.ModelAdmin):

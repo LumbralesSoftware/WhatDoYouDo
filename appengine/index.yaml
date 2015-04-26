@@ -39,7 +39,20 @@ indexes:
 - kind: whatdoyoudo_mission
   properties:
   - name: active
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: active
   - name: created
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: active
+  - name: created
+  - name: __key__
+    direction: desc
 
 - kind: whatdoyoudo_mission
   properties:
@@ -49,8 +62,38 @@ indexes:
 
 - kind: whatdoyoudo_mission
   properties:
+  - name: active
+    direction: desc
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: beginning_id
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
   - name: beginning_id
   - name: created
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: beginning_id
+  - name: language
+    direction: desc
+  - name: active
+  - name: created
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: beginning_id
+    direction: desc
+  - name: __key__
+    direction: desc
 
 - kind: whatdoyoudo_mission
   properties:
@@ -62,6 +105,94 @@ indexes:
   properties:
   - name: created
     direction: desc
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: created
+    direction: desc
+  - name: active
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: created
+    direction: desc
+  - name: beginning_id
+  - name: language
+    direction: desc
+  - name: active
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: created
+    direction: desc
+  - name: language
+    direction: desc
+  - name: active
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: created
+    direction: desc
+  - name: name
+  - name: beginning_id
+  - name: language
+    direction: desc
+  - name: active
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: language
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: language
+  - name: active
+  - name: created
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: language
+    direction: desc
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: language
+    direction: desc
+  - name: active
+  - name: created
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: name
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_mission
+  properties:
+  - name: name
+  - name: beginning_id
+  - name: language
+    direction: desc
+  - name: active
+  - name: created
   - name: __key__
     direction: desc
 
@@ -91,6 +222,14 @@ indexes:
 - kind: whatdoyoudo_missionnode
   properties:
   - name: mission_id
+  - name: name
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: mission_id
+  - name: status
   - name: name
   - name: __key__
     direction: desc
