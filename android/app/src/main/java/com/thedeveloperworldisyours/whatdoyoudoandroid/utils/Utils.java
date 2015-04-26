@@ -2,6 +2,7 @@ package com.thedeveloperworldisyours.whatdoyoudoandroid.utils;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
@@ -36,5 +37,14 @@ public class Utils {
             contactName = " " + contactName;
         }
         Shared.onShareEmail(destination, contactName);
+    }
+    public static void sharedWhatsapp(Activity destination, String stringShared){
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, stringShared);
+        sendIntent.setType("text/plain");
+        sendIntent.setPackage("com.whatsapp");
+        destination.startActivity(sendIntent);
+
     }
 }
