@@ -5,8 +5,6 @@
     <string name="action_refresh">Refresh</string>
     <string name="no_connection">Error connection. You must check your connection</string>
     <string name="activity_main_mission">Mission</string>
-    <string name="activity_main_our_apps">Our Apps</string>
-    <string name="activity_main_about_us">About as</string>
     <string name="activity_intro_title">Important</string>
     <string name="activity_intro_self_destruction">Self destruction</string>
     <string name="activity_intro_cero">0</string>
@@ -29,5 +27,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="download">Download https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>
     <string name="title_email_dialog">Share</string>
+    <string name="alert_dialog_continue">Continue?</string>
+    <string name="alert_dialog_title">Insert Coin</string>
+    <string name="alert_dialog_rate_app_continue">If you enjoy using What do you do?, please take a minute to rate it. Thanks for you support!</string>
+    <string name="alert_dialog_rate_app_title">Rate What do you do?</string>
+    <string name="alert_dialog_rate_app_cancel">No thanks</string>
+    <string name="alert_dialog_rate_app_positive">Rate</string>
+    <string name="action_rate_app">Rate app</string>
+    <string name="action_our_apps">Our Apps</string>
+    <string name="action_about_us">About us</string>
 
 </resources>

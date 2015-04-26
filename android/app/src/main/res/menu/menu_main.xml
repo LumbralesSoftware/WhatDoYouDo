@@ -6,6 +6,20 @@
         android:id="@+id/action_refresh"
         android:orderInCategory="100"
         android:title="@string/action_refresh"
-        android:icon="@android:drawable/ic_menu_rotate"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_rate_app"
+        android:orderInCategory="100"
+        android:title="@string/action_rate_app"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_our_app"
+        android:orderInCategory="100"
+        android:title="@string/action_our_apps"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about_us"
+        android:orderInCategory="100"
+        android:title="@string/action_about_us"
+        app:showAsAction="never" />
 </menu>

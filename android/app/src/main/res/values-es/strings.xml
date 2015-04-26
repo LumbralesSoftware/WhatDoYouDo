@@ -5,8 +5,6 @@
     <string name="action_refresh">Refrescar</string>
     <string name="no_connection">Error de conexión. Debes comprobar tu conexión.</string>
     <string name="activity_main_mission">Misión</string>
-    <string name="activity_main_our_apps">Nuestras Apps</string>
-    <string name="activity_main_about_us">Acerca de</string>
     <string name="activity_intro_title">Importante</string>
     <string name="activity_intro_self_destruction">Se autodestruirá.</string>
     <string name="activity_intro_cero">0</string>
@@ -29,5 +27,14 @@
     <string name="hello_world">Hello world!</string>
     <string name="download">Descargar https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>
     <string name="title_email_dialog">Compartir</string>
+    <string name="alert_dialog_continue">¿Continuar?</string>
+    <string name="alert_dialog_title">Insert Coin</string>
+    <string name="alert_dialog_rate_app_continue">Si disfruta con What do you do?, por favor vote la. Muchas gracias por su opinión.</string>
+    <string name="alert_dialog_rate_app_title">Rate What do you do?</string>
+    <string name="alert_dialog_rate_app_cancel">No thanks</string>
+    <string name="alert_dialog_rate_app_positive">Rate</string>
+    <string name="action_rate_app">Califique la app</string>
+    <string name="action_our_apps">Nuestras Apps</string>
+    <string name="action_about_us">Acerca de</string>
 
 </resources>
