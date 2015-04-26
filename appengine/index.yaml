@@ -49,6 +49,11 @@ indexes:
 
 - kind: whatdoyoudo_mission
   properties:
+  - name: beginning_id
+  - name: created
+
+- kind: whatdoyoudo_mission
+  properties:
   - name: created
   - name: __key__
     direction: desc
@@ -85,9 +90,26 @@ indexes:
 
 - kind: whatdoyoudo_missionnode
   properties:
+  - name: mission_id
   - name: name
   - name: __key__
     direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: name
+  - name: __key__
+    direction: desc
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: node_1_id
+  - name: name
+
+- kind: whatdoyoudo_missionnode
+  properties:
+  - name: node_2_id
+  - name: name
 
 - kind: whatdoyoudo_missionnode
   properties:
