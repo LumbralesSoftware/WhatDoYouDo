@@ -5,8 +5,6 @@
     <string name="action_refresh">Refrescar</string>
     <string name="no_connection">Error de conexión. Debes comprobar tu conexión.</string>
     <string name="activity_main_mission">Misión</string>
-    <string name="activity_main_our_apps">Nuestras Apps</string>
-    <string name="activity_main_about_us">Acerca de</string>
     <string name="activity_intro_title">Importante</string>
     <string name="activity_intro_self_destruction">Se autodestruirá.</string>
     <string name="activity_intro_cero">0</string>
@@ -36,5 +34,7 @@
     <string name="alert_dialog_rate_app_cancel">No thanks</string>
     <string name="alert_dialog_rate_app_positive">Rate</string>
     <string name="action_rate_app">Califique la app</string>
+    <string name="action_our_apps">Nuestras Apps</string>
+    <string name="action_about_us">Acerca de</string>
 
 </resources>

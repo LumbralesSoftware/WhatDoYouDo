@@ -10,37 +10,32 @@
     tools:context=".MainActivity">
 
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/main_activity_imageView"
+        android:src="@drawable/mainicon"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"/>
+
         <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomTextView
             android:id="@+id/main_activity_title"
             style="@style/TitleAppStyle"
+            android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="82dp"
+            android:layout_below="@+id/main_activity_imageView"
             android:background="@color/crema"
             android:text="@string/app_name" />
-
-
-        <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
-            android:id="@+id/main_activity_our_apps_button"
-            style="@style/NormalButtonStyle"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="60dp"
-            android:text="@string/activity_main_our_apps" />
-
-        <com.thedeveloperworldisyours.whatdoyoudoandroid.view.CustomButton
-            android:id="@+id/main_activity_about_us_button"
-            style="@style/NormalButtonStyle"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:text="@string/activity_main_about_us" />
 
         <ListView
             android:id="@+id/main_activity_listView"
             android:layout_width="200dp"
+            android:layout_marginTop="30dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+            android:layout_below="@+id/main_activity_title"/>
+
+
 </RelativeLayout>
