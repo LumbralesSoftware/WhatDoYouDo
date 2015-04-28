@@ -5,6 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.widget.Toast;
+
+import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
 
 import java.util.Locale;
 
@@ -38,13 +41,24 @@ public class Utils {
         }
         Shared.onShareEmail(destination, contactName,win);
     }
+
     public static void sharedWhatsapp(Activity destination, String stringShared){
         Intent sendIntent = new Intent();
         sendIntent.setAction(Intent.ACTION_SEND);
         sendIntent.putExtra(Intent.EXTRA_TEXT, stringShared);
         sendIntent.setType("text/plain");
         sendIntent.setPackage("com.whatsapp");
-        destination.startActivity(sendIntent);
+        if (sendIntent != null) {
+            destination.startActivity(sendIntent);
+        } else {
+            sendIntent.setPackage("com.google.android.talk");
+            if (sendIntent != null) {
+                destination.startActivity(sendIntent);
+            } else {
+                Toast.makeText(destination, R.string.error_no_whatsapp, Toast.LENGTH_SHORT)
+                    .show();
+            }
+        }
 
     }
 }

@@ -35,7 +35,7 @@ import retrofit.client.Response;
 
 
 public class MainActivity extends ActionBarActivity implements AdapterView.OnItemClickListener {
-    //private Button mMission;
+
     private MissionDAO mMissionDAO;
     private NodeDAO mNodeDAO;
     private ListView mListView;
@@ -220,4 +220,5 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         String tag = view.getTag().toString();
         startMission(tag);
     }
+
 }

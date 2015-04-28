@@ -128,7 +128,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
         alert.setTitle(getString(R.string.alert_dialog_title));
         alert.setMessage(getString(R.string.alert_dialog_continue));
         alert.setCancelable(false);
-        alert.setPositiveButton(getString(R.string.activity_finish_share),
+        alert.setPositiveButton(R.string.alert_dialog_shared_possitive,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Utils.sharedWhatsapp(QuestionActivity.this, stringShared);
@@ -146,7 +146,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
                 return false;
             }
         });
-        alert.setNegativeButton(getString(android.R.string.cancel),
+        alert.setNegativeButton(getString(R.string.alert_dialog_shared_cancel),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         goToFinishActivity();

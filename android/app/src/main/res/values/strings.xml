@@ -44,10 +44,13 @@
     <string name="title_activity_finish_acitivity">The End</string>
     <string name="activity_finish_share">Share</string>
     <string name="hello_world">Hello world!</string>
-    <string name="downlod">Download https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>
+    <string name="download">Download https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>
     <string name="title_email_dialog">Share</string>
     <string name="alert_dialog_continue">Continue?</string>
-    <string name="alert_dialog_title">Insert Coin</string>
+    <string name="alert_dialog_title">Game Over</string>
+    <string name="alert_dialog_shared_cancel">Finish game</string>
+    <string name="alert_dialog_shared_possitive">Insert coin</string>
+    <string name="error_no_whatsapp">WhatsApp or Handouts not installed</string>
     <string name="alert_dialog_rate_app_continue">If you enjoy using What do you do?, please take a minute to rate it. Thanks for you support!</string>
     <string name="alert_dialog_rate_app_title">Rate What do you do?</string>
     <string name="alert_dialog_rate_app_cancel">No thanks</string>

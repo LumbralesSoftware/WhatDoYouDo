@@ -41,9 +41,12 @@
     <string name="activity_finish_share">Compartir</string>
     <string name="hello_world">Hello world!</string>
     <string name="download">Descargar https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>
-    <string name="title_email_dialog">Compartir</string>
+    <string name="title_email_dialog">Insert coin(Compartir)</string>
     <string name="alert_dialog_continue">¿Continuar?</string>
-    <string name="alert_dialog_title">Insert Coin</string>
+    <string name="alert_dialog_title">Game Over</string>
+    <string name="alert_dialog_shared_cancel">Terminar juego</string>
+    <string name="alert_dialog_shared_possitive">Insert coin</string>
+    <string name="error_no_whatsapp">WhatsApp o Handouts no instalados</string>
     <string name="alert_dialog_rate_app_continue">Si disfruta con What do you do?, por favor vote la. Muchas gracias por su opinión.</string>
     <string name="alert_dialog_rate_app_title">Rate What do you do?</string>
     <string name="alert_dialog_rate_app_cancel">No thanks</string>
