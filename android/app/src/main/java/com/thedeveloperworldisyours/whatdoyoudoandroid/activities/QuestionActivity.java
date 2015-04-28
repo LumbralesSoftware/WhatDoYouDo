@@ -24,6 +24,8 @@ import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Node;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Constants;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Utils;
 
+import java.util.Random;
+
 public class QuestionActivity extends ActionBarActivity implements View.OnClickListener {
 
     private TextView mTextStep;
@@ -82,6 +84,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
             case Constants.STATUS_WIN:
                 intent = new Intent(this, FinishActivity.class);
                 intent.putExtra(Constants.ID_INTENT_FINISH, nodeID);
+                intent.putExtra(Constants.ID_INTENT_BOOLEAN,"true");
                 startActivity(intent);
                 finish();
                 break;
@@ -113,12 +116,19 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
     public void shared(final String nodeID)
     {
         mNodoFinish= nodeID;
-        final String stringShared = getString(R.string.download);
+
+
+        String array[] = getResources().getStringArray(R.array.arrayLose);
+
+        Random rand = new Random();
+        int randomNum = rand.nextInt((array.length - 1) + 1) + 0;
+
+        final String stringShared = array[randomNum];
         AlertDialog.Builder alert = new AlertDialog.Builder(QuestionActivity.this);
         alert.setTitle(getString(R.string.alert_dialog_title));
         alert.setMessage(getString(R.string.alert_dialog_continue));
         alert.setCancelable(false);
-        alert.setPositiveButton(getString(R.string.activity_finish_share),
+        alert.setPositiveButton(R.string.alert_dialog_shared_possitive,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         Utils.sharedWhatsapp(QuestionActivity.this, stringShared);
@@ -136,7 +146,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
                 return false;
             }
         });
-        alert.setNegativeButton(getString(android.R.string.cancel),
+        alert.setNegativeButton(getString(R.string.alert_dialog_shared_cancel),
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         goToFinishActivity();
@@ -153,6 +163,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
     public void goToFinishActivity(){
         Intent intent = new Intent(QuestionActivity.this, FinishActivity.class);
         intent.putExtra(Constants.ID_INTENT_FINISH, mNodoFinish);
+        intent.putExtra(Constants.ID_INTENT_BOOLEAN,"false");
         startActivity(intent);
         finish();
     }

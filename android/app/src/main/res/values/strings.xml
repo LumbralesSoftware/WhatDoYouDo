@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="arrayWin">
+        <item >Is cutting edge. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Keep it up. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Piece of cake!. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >The more the merrier. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >To be on the ball. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >To be such a Winner. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >To get the hang of it. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >You rock! .Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+    </string-array>
+    <string-array name="arrayLose">
+        <item >Show a leg! Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >Such is life. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >That’s the straw that brokes the camel’s back. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >This is not rocket science. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >To chew the carpet. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+        <item >What a pity. Download What do you do? https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</item>
+    </string-array>
+
     <string name="app_name">What do you do?</string>
     <string name="action_refresh">Refresh</string>
     <string name="no_connection">Error connection. You must check your connection</string>
@@ -28,7 +47,10 @@
     <string name="download">Download https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>
     <string name="title_email_dialog">Share</string>
     <string name="alert_dialog_continue">Continue?</string>
-    <string name="alert_dialog_title">Insert Coin</string>
+    <string name="alert_dialog_title">Game Over</string>
+    <string name="alert_dialog_shared_cancel">Finish game</string>
+    <string name="alert_dialog_shared_possitive">Insert coin</string>
+    <string name="error_no_whatsapp">WhatsApp or Handouts not installed</string>
     <string name="alert_dialog_rate_app_continue">If you enjoy using What do you do?, please take a minute to rate it. Thanks for you support!</string>
     <string name="alert_dialog_rate_app_title">Rate What do you do?</string>
     <string name="alert_dialog_rate_app_cancel">No thanks</string>

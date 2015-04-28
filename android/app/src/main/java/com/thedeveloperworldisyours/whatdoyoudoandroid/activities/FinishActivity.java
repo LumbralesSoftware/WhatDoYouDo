@@ -16,6 +16,7 @@ import com.thedeveloperworldisyours.whatdoyoudoandroid.utils.Utils;
 
 public class FinishActivity extends ActionBarActivity implements View.OnClickListener {
 
+    private boolean mWin;
     private TextView mMessage;
 
     @Override
@@ -28,6 +29,9 @@ public class FinishActivity extends ActionBarActivity implements View.OnClickLis
             return;
         }
         String nodeID = extras.getString(Constants.ID_INTENT_FINISH);
+        String booleanString = extras.getString(Constants.ID_INTENT_BOOLEAN);
+
+        mWin = Boolean.parseBoolean(booleanString);
 
         NodeDAO nodeDAO = new NodeDAO(this);
         Node currentNode =  nodeDAO.readWhere(Constants.COLUMN_ID, nodeID);
@@ -44,7 +48,7 @@ public class FinishActivity extends ActionBarActivity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.activity_finish_share_button:
-                Utils.shared(this,"");
+                Utils.shared(this,"",mWin);
                 break;
         }
     }
