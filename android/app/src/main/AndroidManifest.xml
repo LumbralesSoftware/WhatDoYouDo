@@ -14,7 +14,7 @@
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
+            android:screenOrientation="fullSensor">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,13 +23,16 @@
         </activity>
         <activity
             android:name=".activities.IntroActivity"
-            android:label="@string/activity_intro_title"></activity>
+            android:label="@string/activity_intro_title"
+            android:screenOrientation="fullSensor"></activity>
         <activity
             android:name=".activities.QuestionActivity"
-            android:label="@string/activity_question_title"></activity>
+            android:label="@string/activity_question_title"
+            android:screenOrientation="fullSensor"></activity>
         <activity
             android:name=".activities.FinishActivity"
-            android:label="@string/title_activity_finish_acitivity"></activity>
+            android:label="@string/title_activity_finish_acitivity"
+            android:screenOrientation="fullSensor"></activity>
     </application>
 
 </manifest>

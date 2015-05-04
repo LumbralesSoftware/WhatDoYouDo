@@ -128,6 +128,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
         alert.setTitle(getString(R.string.alert_dialog_title));
         alert.setMessage(getString(R.string.alert_dialog_continue));
         alert.setCancelable(false);
+
         alert.setPositiveButton(R.string.alert_dialog_shared_possitive,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {

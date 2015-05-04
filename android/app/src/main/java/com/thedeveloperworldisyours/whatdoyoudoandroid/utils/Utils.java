@@ -15,6 +15,9 @@ import java.util.Locale;
  * Created by javiergonzalezcabezas on 18/4/15.
  */
 public class Utils {
+
+    private static final int REQUEST_CODE = 10;
+
     public static String checkLanguaje() {
         if (Locale.getDefault().getLanguage().equals("es")) {
             return "es";
@@ -53,7 +56,7 @@ public class Utils {
         } else {
             sendIntent.setPackage("com.google.android.talk");
             if (sendIntent != null) {
-                destination.startActivity(sendIntent);
+                destination.startActivityForResult(sendIntent,REQUEST_CODE);
             } else {
                 Toast.makeText(destination, R.string.error_no_whatsapp, Toast.LENGTH_SHORT)
                     .show();

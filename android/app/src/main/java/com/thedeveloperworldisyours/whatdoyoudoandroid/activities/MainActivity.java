@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -61,7 +62,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
 
     public void getInfo(){
         if(exitsDB()){
-            getInfoMissionFromDB();
+//            getInfoMissionFromDB();
             buildList(mMissionDAO.readAllAsc());
         }else if (Utils.isOnline(this)) {
 
@@ -76,10 +77,10 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         mNodeDAO.deleteAll();
     }
 
-    public void getInfoMissionFromDB(){
-        List<Mission> listMision= new ArrayList<Mission>();
-        listMision=mMissionDAO.readAllAsc();
-    }
+//    public void getInfoMissionFromDB(){
+//        List<Mission> listMision= new ArrayList<Mission>();
+//        listMision=mMissionDAO.readAllAsc();
+//    }
 
     public boolean exitsDB(){
         int missions = mMissionDAO.getCount();
@@ -119,7 +120,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             mMissionDAO.create(listMission.get(i));
             getNodes(listMission.get(i).getId());
         }
-        getInfoMissionFromDB();
+//        getInfoMissionFromDB();
         buildList(mMissionDAO.readAllAsc());
     }
 
@@ -219,6 +220,15 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         String tag = view.getTag().toString();
         startMission(tag);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(true);
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
 }

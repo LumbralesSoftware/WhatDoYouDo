@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
@@ -38,6 +39,11 @@ public class FinishActivity extends ActionBarActivity implements View.OnClickLis
 
         mMessage = (TextView) findViewById(R.id.activity_finish_text);
         mMessage.setText(currentNode.getText());
+
+        if (mWin){
+        ImageView imageView = (ImageView) findViewById(R.id.activity_finish_imageView);
+            imageView.setImageDrawable(getResources().getDrawable(R.drawable.win));
+        }
 
         Button share = (Button) findViewById(R.id.activity_finish_share_button);
         share.setOnClickListener(this);
