@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <span style="line-height: 1.5; font-style: inherit; font-weight: inherit;">tools:ignore="TypographyDashes"></span>
+
+    <!-- the Local LogLevel for Analytics -->
+    <string name="ga_logLevel">verbose</string>
+
+    <!-- how often the dispatcher should fire -->
+    <integer name="ga_dispatchPeriod">30</integer>
+
+    <!-- Treat events as test events and don't send to google -->
+    <bool name="ga_dryRun">false</bool>
+
+    <!-- The screen names that will appear in reports -->
+    <string name="com.thedeveloperworldisyours.whatdoyoudoandroid.activities.FinishActivity">FinishActivity</string>
+    <string name="com.thedeveloperworldisyours.whatdoyoudoandroid.activities.IntroActivity">IntroActivity</string>
+    <string name="com.thedeveloperworldisyours.whatdoyoudoandroid.activities.MainActivity">MainActivity</string>
+    <string name="com.thedeveloperworldisyours.whatdoyoudoandroid.activities.QuestionActivity">QuestionActivity</string>
+
+</resources>

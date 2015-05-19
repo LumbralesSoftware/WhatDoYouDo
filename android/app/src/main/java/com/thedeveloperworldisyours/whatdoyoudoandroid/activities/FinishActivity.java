@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.GoogleAnalytics;
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.MyApp;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.NodeDAO;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Node;
@@ -24,6 +28,8 @@ public class FinishActivity extends ActionBarActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.finish_acitivity);
+
+
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -49,6 +55,11 @@ public class FinishActivity extends ActionBarActivity implements View.OnClickLis
         share.setOnClickListener(this);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        googleAnalitys();
+    }
 
     @Override
     public void onClick(View v) {
@@ -58,4 +69,32 @@ public class FinishActivity extends ActionBarActivity implements View.OnClickLis
                 break;
         }
     }
+
+    public void googleAnalitys(){
+        // Get tracker.
+        Tracker t =((MyApp) getApplication()).getTracker(MyApp.TrackerName.APP_TRACKER);
+
+
+        // Set screen name.
+        t.setScreenName(getString(R.string.title_activity_finish_acitivity));
+
+        // Send a screen view.
+        t.send(new HitBuilders.AppViewBuilder().build());
+    }
+
+    /**
+     * this method was created for animation between activities
+     */
+    public void cameback()
+    {
+        finish();
+        overridePendingTransition(R.anim.right, R.anim.left);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        cameback();
+    }
+
 }

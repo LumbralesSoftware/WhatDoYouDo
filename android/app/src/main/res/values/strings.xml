@@ -42,6 +42,9 @@
     <string name="activity_question_a">A</string>
     <string name="activity_question_b">B</string>
     <string name="title_activity_finish_acitivity">The End</string>
+    <string name="title_activity_question_activity">Question Activity</string>
+    <string name="title_activity_intro_activity">Intro Activity</string>
+    <string name="title_activity_main_activity">Main Activity</string>
     <string name="activity_finish_share">Share</string>
     <string name="hello_world">Hello world!</string>
     <string name="download">Download https://play.google.com/store/apps/details?id=com.thedeveloperworldisyours.whatdoyoudoandroid</string>

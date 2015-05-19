@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.MyApp;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.MissionDAO;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Mission;
@@ -26,6 +29,8 @@ public class IntroActivity extends ActionBarActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_activity);
+
+        googleAnalitys();
 
         mTextIntro = (TextView) findViewById(R.id.activity_intro_text);
         mNumberText = (TextView) findViewById(R.id.activity_intro_number);
@@ -98,6 +103,7 @@ public class IntroActivity extends ActionBarActivity implements View.OnClickList
         Intent intent = new Intent(this, QuestionActivity.class);
         intent.putExtra(Constants.ID_INTENT_NODE, mNextNode);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();
     }
 
@@ -115,5 +121,32 @@ public class IntroActivity extends ActionBarActivity implements View.OnClickList
                 goToQuestion();
                 break;
         }
+    }
+
+    public void googleAnalitys(){
+        // Get tracker.
+        Tracker t =((MyApp) getApplication()).getTracker(MyApp.TrackerName.APP_TRACKER);
+
+
+        // Set screen name.
+        t.setScreenName(getString(R.string.title_activity_intro_activity));
+
+        // Send a screen view.
+        t.send(new HitBuilders.AppViewBuilder().build());
+    }
+
+    /**
+     * this method was created for animation between activities
+     */
+    public void cameback()
+    {
+        finish();
+        overridePendingTransition(R.anim.right, R.anim.left);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        cameback();
     }
 }

@@ -18,6 +18,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.MyApp;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.NodeDAO;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.models.Node;
@@ -39,11 +42,14 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
     private NodeDAO mNodeDAO;
     private Node mCurrentNode;
     private String mNodoFinish;
+    private boolean mWin = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.question_activity);
+
+        googleAnalitys();
 
         Bundle extras = getIntent().getExtras();
         if (extras == null) {
@@ -132,7 +138,8 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
         alert.setPositiveButton(R.string.alert_dialog_shared_possitive,
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        Utils.sharedWhatsapp(QuestionActivity.this, stringShared);
+                        Utils.shared(QuestionActivity.this,"",mWin);
+//                        Utils.sharedWhatsapp(QuestionActivity.this, stringShared);
                     }
                 }
         );
@@ -166,6 +173,7 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
         intent.putExtra(Constants.ID_INTENT_FINISH, mNodoFinish);
         intent.putExtra(Constants.ID_INTENT_BOOLEAN,"false");
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
         finish();
     }
 
@@ -230,6 +238,33 @@ public class QuestionActivity extends ActionBarActivity implements View.OnClickL
     protected void onPause() {
         mHandler.removeCallbacks(mRunnable);
         super.onPause();
+    }
+
+    public void googleAnalitys(){
+        // Get tracker.
+        Tracker t =((MyApp) getApplication()).getTracker(MyApp.TrackerName.APP_TRACKER);
+
+
+        // Set screen name.
+        t.setScreenName(getString(R.string.title_activity_question_activity));
+
+        // Send a screen view.
+        t.send(new HitBuilders.AppViewBuilder().build());
+    }
+
+    /**
+     * this method was created for animation between activities
+     */
+    public void cameback()
+    {
+        finish();
+        overridePendingTransition(R.anim.right, R.anim.left);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        cameback();
     }
 
 }

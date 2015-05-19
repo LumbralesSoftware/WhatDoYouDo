@@ -17,6 +17,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
+import com.thedeveloperworldisyours.whatdoyoudoandroid.MyApp;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.R;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.adapters.MySimpleArrayAdapter;
 import com.thedeveloperworldisyours.whatdoyoudoandroid.dao.MissionDAO;
@@ -46,6 +49,8 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
+
+        googleAnalitys();
 
         mListView = (ListView) findViewById(R.id.main_activity_listView);
         mListView.setOnItemClickListener(this);
@@ -178,10 +183,12 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             case R.id.action_about_us:
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.ABOUT_US));
                 startActivity(browserIntent);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
             case R.id.action_our_app:
                 Intent browserIntentApps = new Intent(Intent.ACTION_VIEW, Uri.parse(Constants.OUR_APPS));
                 startActivity(browserIntentApps);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
         }
 
@@ -214,6 +221,7 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
         Intent intent = new Intent(this, IntroActivity.class);
         intent.putExtra(Constants.ID_INTENT_MISSION, id);
         startActivity(intent);
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
     }
 
     @Override
@@ -229,6 +237,18 @@ public class MainActivity extends ActionBarActivity implements AdapterView.OnIte
             return true;
         }
         return super.onKeyDown(keyCode, event);
+    }
+
+    public void googleAnalitys(){
+        // Get tracker.
+        Tracker t =((MyApp) getApplication()).getTracker(MyApp.TrackerName.APP_TRACKER);
+
+
+        // Set screen name.
+        t.setScreenName(getString(R.string.title_activity_main_activity));
+
+        // Send a screen view.
+        t.send(new HitBuilders.AppViewBuilder().build());
     }
 
 }

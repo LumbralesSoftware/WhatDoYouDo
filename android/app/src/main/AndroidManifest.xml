@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <!-- Optional permission for reliable local dispatching on non-Google Play devices -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:name=".MyApp"
         android:allowBackup="true"
@@ -34,5 +37,9 @@
             android:label="@string/title_activity_finish_acitivity"
             android:screenOrientation="fullSensor"></activity>
     </application>
+
+    <!-- Google Analytics Version v4 needs this value for easy tracking -->
+    <meta-data android:name="com.google.android.gms.analytics.globalConfigResource"
+        android:resource="@xml/global_tracker" />
 
 </manifest>
